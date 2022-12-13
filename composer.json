@@ -1,8 +1,8 @@
 {
-    "name": "vmpl/module-base",
+    "name": "vmpl/module-popup-managment",
     "description": "N/A",
     "type": "magento2-module",
-    "version": "1.0.0-dev",
+    "version": "0.1.0-dev",
     "license": "Apache-2.0",
     "authors": [
         {
@@ -13,24 +13,26 @@
         }
     ],
     "dist": {
-        "url": "https://github.com/vmpl/magento-module-base/archive/refs/tags/1.0.0-dev.zip",
+        "url": "https://github.com/vmpl/magento-popup-management/archive/refs/tags/0.1.0-dev.zip",
         "type": "zip"
     },
     "source": {
-        "url":  "https://github.com/vmpl/magento-module-base.git",
+        "url":  "https://github.com/vmpl/magento-popup-management.git",
         "type": "git",
         "reference": "master"
     },
     "require": {
         "php": "~8.1.0",
-        "magento/framework": "^103.0.5"
+        "magento/framework": "^103.0.5",
+        "magento/module-cms": "104.0.*",
+        "magento/module-widget": "101.2.*"
     },
     "autoload": {
         "files": [
             "registration.php"
         ],
         "psr-4": {
-            "VMPL\\Base\\": ""
+            "VMPL\\PopupManagement\\": ""
         }
     }
 }
