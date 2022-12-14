@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+  <default>
+    <cms>
+      <popup>
+        <delay>3000</delay>
+        <timeout>0</timeout>
+        <count>1</count>
+        <clickableOverlay>1</clickableOverlay>
+        <type>popup</type>
+      </popup>
+    </cms>
+  </default>
+</config>
