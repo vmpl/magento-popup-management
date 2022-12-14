@@ -79,4 +79,11 @@ class CmsPopup extends \Magento\Framework\View\Element\Template implements Block
 
         return $this->block;
     }
+
+    public function getGeneratedId(): string
+    {
+        $id = $this->getBlock()?->getId() ?? '';
+        $id .= $this->getNameInLayout();
+        return md5($id);
+    }
 }

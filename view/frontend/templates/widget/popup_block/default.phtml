@@ -1,5 +1,9 @@
-<?php  /* @var $block \Magento\Cms\Block\Widget\Block */
+<?php /* @var $block \VMPL\PopupManagement\Block\Widget\CmsPopup */
+$mageInit = [
+    'vmpl/popup-management' => []
+];
 ?>
-<div class="widget block block-popup-cms">
-    <?= /* @noEscape */ $block->getText() ?>
+<div id="<?= $block->getGeneratedId() ?>" class="widget block block-popup-cms"
+     data-mage-init='<?= json_encode($mageInit) ?>'>
+    <?= $block->getText() ?>
 </div>
