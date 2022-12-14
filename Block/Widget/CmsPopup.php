@@ -69,7 +69,9 @@ class CmsPopup extends \Magento\Framework\View\Element\Template implements Block
                 try {
                     /** @var CmsBlock $block */
                     $block = $this->blockRepository->getById($blockId);
-                    if (in_array($this->_storeManager->getStore()->getId(), $block->getStores())) {
+                    $stores = $block->getStores();
+                    if ((isset($stores[0]) && $stores[0] == 0)
+                        || in_array($this->_storeManager->getStore()->getId(), $stores)) {
                         $this->block = $block;
                     }
                 } catch (NoSuchEntityException $e) {
