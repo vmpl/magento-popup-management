@@ -56,4 +56,13 @@ class Config
             $storeId
         );
     }
+
+    public function getByType(\VMPL\PopupManagement\Type\Config $type, $storeId = null)
+    {
+        return $this->scopeConfig->getValue(
+            $type->value,
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
+            $storeId
+        );
+    }
 }

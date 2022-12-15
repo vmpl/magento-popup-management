@@ -24,6 +24,46 @@
           </option>
         </options>
       </parameter>
+      <parameter name="delay" xsi:type="text" visible="true" required="false" sort_order="20">
+        <label translate="true">Open delay</label>
+        <description translate="true">When is not set, it will be overridden from system configuration.</description>
+      </parameter>
+      <parameter name="timeout" xsi:type="text" visible="true" required="false" sort_order="30">
+        <label translate="true">Timeout</label>
+        <description translate="true">When is not set, it will be overridden from system configuration.</description>
+      </parameter>
+      <parameter name="count" xsi:type="text" visible="true" required="false" sort_order="40">
+        <label translate="true">Count</label>
+        <description translate="true">When is not set, it will be overridden from system configuration.</description>
+      </parameter>
+      <parameter name="clickableOverlay" xsi:type="select" visible="true" required="false" sort_order="50">
+        <label translate="true">Clickable Overlay</label>
+        <options>
+          <option name="default" value="default" selected="true">
+            <label translate="true">System Configuration</label>
+          </option>
+          <option name="no" value="false">
+            <label translate="true">No</label>
+          </option>
+          <option name="yes" value="true">
+            <label translate="true">Yes</label>
+          </option>
+        </options>
+      </parameter>
+      <parameter name="type" xsi:type="select" visible="true" required="false" sort_order="60">
+        <label translate="true">Type</label>
+        <options>
+          <option name="default" value="default" selected="true">
+            <label translate="true">System Configuration</label>
+          </option>
+          <option name="popup" value="popup">
+            <label translate="true">Popup</label>
+          </option>
+          <option name="slide" value="slide">
+            <label translate="true">Slide</label>
+          </option>
+        </options>
+      </parameter>
     </parameters>
   </widget>
 </widgets>

@@ -9,6 +9,7 @@ use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Widget\Block\BlockInterface;
+use VMPL\PopupManagement\Helper\Config;
 
 class CmsPopup extends \Magento\Framework\View\Element\Template implements BlockInterface, IdentityInterface
 {
@@ -19,6 +20,7 @@ class CmsPopup extends \Magento\Framework\View\Element\Template implements Block
         Context                                     $context,
         protected readonly FilterProvider           $filterProvider,
         protected readonly BlockRepositoryInterface $blockRepository,
+        protected readonly Config                   $config,
         array                                       $data = []
     ) {
         parent::__construct($context, $data);
@@ -87,5 +89,10 @@ class CmsPopup extends \Magento\Framework\View\Element\Template implements Block
         $id = $this->getBlock()?->getId() ?? '';
         $id .= $this->getNameInLayout();
         return md5($id);
+    }
+
+    public function getWidgetParam(\VMPL\PopupManagement\Type\Config $config)
+    {
+        return $this->getData($config->getFieldName()) ?? $this->config->getByType($config);
     }
 }
