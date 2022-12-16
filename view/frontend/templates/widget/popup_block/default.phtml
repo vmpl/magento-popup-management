@@ -1,6 +1,14 @@
 <?php /* @var $block \VMPL\PopupManagement\Block\Widget\CmsPopup */
 $mageInit = [
-    'vmpl/popup-management' => []
+    'vmpl/popup-management' => [
+        'waitTime' => $block->getWidgetParam(\VMPL\PopupManagement\Type\Config::Delay),
+        'closeTimeout' => $block->getWidgetParam(\VMPL\PopupManagement\Type\Config::Timeout),
+        'limitOpened' => $block->getWidgetParam(\VMPL\PopupManagement\Type\Config::Count),
+        'modalSettings' => [
+            'type' => $block->getWidgetParam(\VMPL\PopupManagement\Type\Config::PopupType),
+            'ClickableOverlay' => $block->getWidgetParam(\VMPL\PopupManagement\Type\Config::ClickableOverlay)
+        ],
+    ]
 ];
 ?>
 <div id="<?= $block->getGeneratedId() ?>" class="widget block block-popup-cms"

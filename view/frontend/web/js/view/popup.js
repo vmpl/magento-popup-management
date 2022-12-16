@@ -29,6 +29,7 @@ define([
     return Component.extend({
         defaults: {
             waitTime: 3000,
+            closeTimeout: 0,
             limitOpened: 0,
             storageKey: 'vmpl__popup_displayed',
             modalSettings: {
@@ -51,7 +52,7 @@ define([
             }
             this.storage = new storage(this.storageKey, this.element.id ?? 'default')
 
-            if (this.limitOpened !== 0 && this.limitOpened > this.storage.count) {
+            if (this.limitOpened !== 0 && this.limitOpened <= this.storage.count) {
                 return console.log(`Popup element#${this.element.id} has reach limit to open`);
             }
 
@@ -61,6 +62,12 @@ define([
         },
         onOpened() {
             this.storage.count++;
+
+            if (this.closeTimeout > 0) {
+                setTimeout(() => {
+                    this.popup.closeModal();
+                }, this.closeTimeout)
+            };
         }
     })
 })
