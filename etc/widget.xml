@@ -26,15 +26,15 @@
       </parameter>
       <parameter name="delay" xsi:type="text" visible="true" required="false" sort_order="20">
         <label translate="true">Open delay</label>
-        <description translate="true">When is not set, it will be overridden from system configuration.</description>
+        <description translate="true">System configuration value will be used when left empty.</description>
       </parameter>
       <parameter name="timeout" xsi:type="text" visible="true" required="false" sort_order="30">
         <label translate="true">Timeout</label>
-        <description translate="true">When is not set, it will be overridden from system configuration.</description>
+        <description translate="true">System configuration value will be used when left empty.</description>
       </parameter>
       <parameter name="count" xsi:type="text" visible="true" required="false" sort_order="40">
         <label translate="true">Count</label>
-        <description translate="true">When is not set, it will be overridden from system configuration.</description>
+        <description translate="true">System configuration value will be used when left empty.</description>
       </parameter>
       <parameter name="clickableOverlay" xsi:type="select" visible="true" required="false" sort_order="50">
         <label translate="true">Clickable Overlay</label>
