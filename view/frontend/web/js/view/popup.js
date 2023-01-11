@@ -61,7 +61,7 @@ define([
             }, this.waitTime);
         },
         onOpened() {
-            // this.storage.count++;
+            this.storage.count++;
 
             if (this.closeTimeout > 0) {
                 const modalInnerWrapElement = this.popup.modal[0].querySelector('.modal-inner-wrap');
