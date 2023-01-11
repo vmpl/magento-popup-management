@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
-  <widget id="cms_static_block" class="VMPL\PopupManagement\Block\Widget\CmsPopup"
+  <widget id="vm_popup_block" class="VMPL\PopupManagement\Block\Widget\CmsPopup"
           placeholder_image="Magento_Cms::images/widget_block.png">
     <label translate="true">CMS Popup Block</label>
     <description translate="true">Contents of a CMS Block display as popup</description>
