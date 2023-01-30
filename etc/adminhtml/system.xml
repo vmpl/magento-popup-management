@@ -5,7 +5,7 @@
     <section id="cms">
       <group id="popup" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1"
              showInStore="1">
-        <label>Popup Block Widgets</label>
+        <label>Popup Block Widgets Default Options</label>
         <field id="delay" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1"
                sortOrder="10">
           <label>Opening delay popup</label>
@@ -26,8 +26,8 @@
         </field>
         <field id="clickableOverlay" translate="label comment" type="select" showInDefault="1" showInWebsite="1"
                showInStore="1" canRestore="1" sortOrder="40">
-          <label>Close modal by clicking the overlay</label>
-          <comment>Close the modal window when a user clicks on the overlay.</comment>
+          <label>Clickable Overlay</label>
+          <comment>Close modal by clicking the overlay</comment>
           <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
         </field>
         <field id="type" translate="label comment" type="select" showInDefault="1" showInWebsite="1"
