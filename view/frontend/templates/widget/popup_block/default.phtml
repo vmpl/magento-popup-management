@@ -1,9 +1,10 @@
 <?php /* @var $block \VMPL\PopupManagement\Block\Widget\CmsPopup */
+/** @var \Magento\Framework\Escaper $escaper */
 $mageInit = [
     'vmpl/popup-management' => []
 ];
 ?>
-<div id="<?= $block->getGeneratedId() ?>" class="widget block block-popup-cms"
-     data-mage-init='<?= json_encode($mageInit) ?>'>
-    <?= $block->getText() ?>
+<div id="<?= $escaper->escapeHtml($block->getGeneratedId()) ?>" class="widget block block-popup-cms"
+     data-mage-init='<?= /* @noEscape */ json_encode($mageInit) ?>'>
+    <?= /* @noEscape */ $block->getText() ?>
 </div>
