@@ -36,33 +36,13 @@
         <label translate="true">Count</label>
         <description translate="true">System configuration value will be used when left empty.</description>
       </parameter>
-      <parameter name="clickableOverlay" xsi:type="select" visible="true" required="false" sort_order="50">
+      <parameter name="clickableOverlay" xsi:type="select" visible="true" required="false" sort_order="50"
+                 source_model="VMPL\PopupManagement\Model\Config\Source\YesnoWithConfig">
         <label translate="true">Clickable Overlay</label>
-        <options>
-          <option name="default" value="default" selected="true">
-            <label translate="true">System Configuration</label>
-          </option>
-          <option name="no" value="false">
-            <label translate="true">No</label>
-          </option>
-          <option name="yes" value="true">
-            <label translate="true">Yes</label>
-          </option>
-        </options>
       </parameter>
-      <parameter name="type" xsi:type="select" visible="true" required="false" sort_order="60">
+      <parameter name="type" xsi:type="select" visible="true" required="false" sort_order="60"
+                 source_model="VMPL\PopupManagement\Model\Config\Source\PopupTypes\WithDefault">
         <label translate="true">Type</label>
-        <options>
-          <option name="default" value="default" selected="true">
-            <label translate="true">System Configuration</label>
-          </option>
-          <option name="popup" value="popup">
-            <label translate="true">Popup</label>
-          </option>
-          <option name="slide" value="slide">
-            <label translate="true">Slide</label>
-          </option>
-        </options>
       </parameter>
     </parameters>
   </widget>
