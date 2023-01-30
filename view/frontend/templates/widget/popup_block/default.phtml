@@ -5,6 +5,6 @@ $mageInit = [
 ];
 ?>
 <div id="<?= $escaper->escapeHtml($block->getGeneratedId()) ?>" class="widget block block-popup-cms"
-     data-mage-init='<?= json_encode($mageInit) ?>'>
+     data-mage-init='<?= /* @noEscape */ json_encode($mageInit) ?>'>
     <?= /* @noEscape */ $block->getText() ?>
 </div>
