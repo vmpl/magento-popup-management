@@ -7,5 +7,13 @@ use Magento\Widget\Block\BlockInterface;
 
 class CmsPopup extends \Magento\Cms\Block\Widget\Block implements BlockInterface, IdentityInterface
 {
-
+    /**
+     * @return string
+     */
+    public function getGeneratedId(): string
+    {
+        $id = $this->getBlock()?->getId() ?? '';
+        $id .= $this->getNameInLayout();
+        return md5($id);
+    }
 }
