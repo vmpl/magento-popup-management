@@ -29,6 +29,7 @@ define([
     return Component.extend({
         defaults: {
             waitTime: 3000,
+            closeTimeout: 0,
             limitOpened: 0,
             storageKey: 'vmpl__popup_displayed',
             modalSettings: {
@@ -61,6 +62,27 @@ define([
         },
         onOpened() {
             this.storage.count++;
+
+            if (this.closeTimeout > 0) {
+                const modalInnerWrapElement = this.popup.modal[0].querySelector('.modal-inner-wrap');
+                const progressElement = document.createElement('div');
+                progressElement.classList.add('progress-timeout');
+                progressElement.style.transitionDuration = `${this.closeTimeout}ms`;
+                modalInnerWrapElement.prepend(progressElement);
+
+                const handler = setTimeout(() => {
+                    this.popup.closeModal();
+                }, this.closeTimeout)
+
+                setTimeout(() => {
+                    progressElement.classList.add('start');
+                });
+
+                modalInnerWrapElement.addEventListener('click', () => {
+                    clearTimeout(handler);
+                    progressElement.remove();
+                }, {once: true, passive: true});
+            }
         }
     })
 })
