@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+  <widget id="vm_popup_block" class="VMPL\PopupManagement\Block\Widget\CmsPopup"
+          placeholder_image="Magento_Cms::images/widget_block.png">
+    <label translate="true">CMS Popup Block</label>
+    <description translate="true">Contents of a CMS Block displayed as a popup</description>
+    <parameters>
+      <parameter name="block_id" xsi:type="block" visible="true" required="true" sort_order="20">
+        <label translate="true">Block</label>
+        <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
+          <data>
+            <item name="button" xsi:type="array">
+              <item name="open" xsi:type="string" translate="true">Select Block...</item>
+            </item>
+          </data>
+        </block>
+      </parameter>
+      <parameter name="template" xsi:type="select" visible="true" required="true" sort_order="10">
+        <label translate="true">Template</label>
+        <options>
+          <option name="default" value="widget/popup_block/default.phtml" selected="true">
+            <label translate="true">CMS Popup Block Default Template</label>
+          </option>
+        </options>
+      </parameter>
+    </parameters>
+  </widget>
+</widgets>
