@@ -1,7 +1,15 @@
 <?php /* @var $block \VMPL\PopupManagement\Block\Widget\CmsPopup */
 /** @var \Magento\Framework\Escaper $escaper */
 $mageInit = [
-    'vmpl/popup-management' => []
+    'vmpl/popup-management' => [
+        'waitTime' => $block->getWidgetParam(\VMPL\PopupManagement\Type\Config::Delay),
+        'closeTimeout' => $block->getWidgetParam(\VMPL\PopupManagement\Type\Config::Timeout),
+        'limitOpened' => $block->getWidgetParam(\VMPL\PopupManagement\Type\Config::Count),
+        'modalSettings' => [
+            'type' => $block->getWidgetParam(\VMPL\PopupManagement\Type\Config::PopupType),
+            'ClickableOverlay' => $block->getWidgetParam(\VMPL\PopupManagement\Type\Config::ClickableOverlay)
+        ],
+    ]
 ];
 ?>
 <div id="<?= $escaper->escapeHtml($block->getGeneratedId()) ?>" class="widget block block-popup-cms"

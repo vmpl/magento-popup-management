@@ -1,0 +1,19 @@
+& when (@media-common = true) {
+  .modal {
+    &-popup &-inner-wrap {
+      .progress-timeout {
+        width: 0;
+        margin-right: auto;
+        height: @modal_progress_timeout_height;
+        background: @modal_progress_background;
+        transition-property: all;
+        transition-delay: 0ms;
+        transition-timing-function: ease-out;
+
+        &.start {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
