@@ -4,8 +4,14 @@ namespace VMPL\PopupManagement\Model\Config\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 
+/**
+ * Option Source for system
+ */
 class PopupTypes implements OptionSourceInterface
 {
+    /**
+     * @return array<string, mixed>
+     */
     public function toOptionArray()
     {
         return array_map(function ($case) {

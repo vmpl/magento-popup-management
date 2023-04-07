@@ -5,35 +5,35 @@
     <section id="cms">
       <group id="popup" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1"
              showInStore="1">
-        <label>Popup Block Widgets</label>
+        <label>Popup Block Widgets Default Options</label>
         <field id="delay" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1"
                sortOrder="10">
-          <label>Open delay</label>
+          <label>Opening delay popup</label>
           <comment>milliseconds</comment>
           <validate>validate-digits validate-zero-or-greater</validate>
         </field>
         <field id="timeout" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1"
                sortOrder="20">
-          <label>Timeout</label>
+          <label>Close timeout popup</label>
           <comment>milliseconds.</comment>
           <validate>validate-digits validate-zero-or-greater</validate>
         </field>
         <field id="count" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1"
                sortOrder="30">
-          <label>Display count</label>
-          <comment>Setting this value to zero, will have no limits.</comment>
+          <label>Limit display count</label>
+          <comment>Set to 0 to disable the limit.</comment>
           <validate>validate-digits validate-zero-or-greater</validate>
         </field>
         <field id="clickableOverlay" translate="label comment" type="select" showInDefault="1" showInWebsite="1"
                showInStore="1" canRestore="1" sortOrder="40">
           <label>Clickable Overlay</label>
-          <comment>Close the modal window when a user clicks on the overlay.</comment>
+          <comment>Close modal by clicking the overlay</comment>
           <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
         </field>
         <field id="type" translate="label comment" type="select" showInDefault="1" showInWebsite="1"
                showInStore="1" canRestore="1" sortOrder="50">
           <label>Type</label>
-          <comment>The type of window.</comment>
+          <comment>Type of the window.</comment>
           <source_model>\VMPL\PopupManagement\Model\Config\Source\PopupTypes</source_model>
         </field>
       </group>
