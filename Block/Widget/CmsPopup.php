@@ -11,21 +11,6 @@ use VMPL\PopupManagement\Helper\Config;
  */
 class CmsPopup extends \Magento\Cms\Block\Widget\Block implements BlockInterface, IdentityInterface
 {
-    public function __construct(
-        \Magento\Framework\View\Element\Template\Context $context,
-        \Magento\Cms\Model\Template\FilterProvider       $filterProvider,
-        \Magento\Cms\Model\BlockFactory                  $blockFactory,
-        protected readonly Config                        $config,
-        array                                            $data = [],
-    ) {
-        parent::__construct(
-            $context,
-            $filterProvider,
-            $blockFactory,
-            $data
-        );
-    }
-
     /**
      * @return string
      */
@@ -38,9 +23,6 @@ class CmsPopup extends \Magento\Cms\Block\Widget\Block implements BlockInterface
 
     public function getWidgetParam(\VMPL\PopupManagement\Type\Config $config)
     {
-        $value = $this->getData($config->getFieldName());
-        return $value === 'default' || empty($value)
-            ? $this->config->getByType($config)
-            : $value;
+        return $this->getData($config->getFieldName()) ?? $this->config->getByType($config);
     }
 }
