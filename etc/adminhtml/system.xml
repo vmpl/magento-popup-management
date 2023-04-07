@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+  <system>
+    <section id="cms">
+      <group id="popup" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1"
+             showInStore="1">
+        <label>Popup Block Widgets Default Options</label>
+        <field id="delay" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1"
+               sortOrder="10">
+          <label>Opening delay popup</label>
+          <comment>milliseconds</comment>
+          <validate>validate-digits validate-zero-or-greater</validate>
+        </field>
+        <field id="timeout" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1"
+               sortOrder="20">
+          <label>Close timeout popup</label>
+          <comment>milliseconds.</comment>
+          <validate>validate-digits validate-zero-or-greater</validate>
+        </field>
+        <field id="count" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1"
+               sortOrder="30">
+          <label>Limit display count</label>
+          <comment>Set to 0 to disable the limit.</comment>
+          <validate>validate-digits validate-zero-or-greater</validate>
+        </field>
+        <field id="clickableOverlay" translate="label comment" type="select" showInDefault="1" showInWebsite="1"
+               showInStore="1" canRestore="1" sortOrder="40">
+          <label>Clickable Overlay</label>
+          <comment>Close modal by clicking the overlay</comment>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="type" translate="label comment" type="select" showInDefault="1" showInWebsite="1"
+               showInStore="1" canRestore="1" sortOrder="50">
+          <label>Type</label>
+          <comment>Type of the window.</comment>
+          <source_model>\VMPL\PopupManagement\Model\Config\Source\PopupTypes</source_model>
+        </field>
+      </group>
+    </section>
+  </system>
+</config>
