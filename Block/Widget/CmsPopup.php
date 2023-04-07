@@ -6,6 +6,9 @@ use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Widget\Block\BlockInterface;
 use VMPL\PopupManagement\Helper\Config;
 
+/**
+ * Block of the widget
+ */
 class CmsPopup extends \Magento\Cms\Block\Widget\Block implements BlockInterface, IdentityInterface
 {
     public function __construct(
