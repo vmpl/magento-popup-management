@@ -23,7 +23,7 @@ class ConfigProvider
      * @param $storeId
      * @return mixed
      */
-    public function getConfig(ConfigTypes $type, $storeId = null): mixed
+    public function getByType(ConfigTypes $type, $storeId = null): mixed
     {
         return $this->scopeConfig->getValue($type->value,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
