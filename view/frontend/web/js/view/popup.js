@@ -51,7 +51,7 @@ define([
             }
             this.storage = new storage(this.storageKey, this.element.id ?? 'default')
 
-            if (this.limitOpened !== 0 && this.limitOpened > this.storage.count) {
+            if (this.limitOpened !== 0 && this.limitOpened <= this.storage.count) {
                 return console.log(`Popup has already been opened ${this.limitOpened} times, skipping...`);
             }
 
