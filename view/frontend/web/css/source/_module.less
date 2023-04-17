@@ -1,7 +1,34 @@
+@vmpl_dialog_padding: @indent__m;
+@vmpl_dialog_margin: @indent__m auto;
+@vmpl_dialog_max-height: ~"calc(100% - @{indent__m} * 2)";
+
 & when (@media-common = true) {
-  .block-popup-cms {
+  .block-popup-cms:not(dialog) {
     :not(.modal-content) > & {
       display: none !important;
+    }
+  }
+
+  dialog.block-popup-cms {
+    position: relative;
+    padding: @vmpl_dialog_padding;
+    margin: @vmpl_dialog_margin;
+    border-style: none;
+    box-sizing: border-box;
+    max-height: @vmpl_dialog_max-height;
+
+    form[method=dialog]:first-child {
+      display: flex;
+      flex-flow: row-reverse nowrap;
+      background-color: @page__background-color;
+      z-index: @z-index-10;
+    }
+
+    .action-close {
+      &:extend(.modal-popup .action-close all);
+      position: static;
+      padding-top: 0;
+      padding-right: 0;
     }
   }
 }
