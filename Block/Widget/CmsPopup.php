@@ -38,6 +38,9 @@ class CmsPopup extends \Magento\Cms\Block\Widget\Block implements BlockInterface
 
     public function getWidgetParam(\VMPL\PopupManagement\Type\Config $config)
     {
-        return $this->getData($config->getFieldName()) ?? $this->configProvider->getByType($config);
+        $value = $this->getData($config->getFieldName());
+        return $value === 'default' || empty($value)
+            ? $this->configProvider->getByType($config)
+            : $value;
     }
 }
