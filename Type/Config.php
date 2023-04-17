@@ -9,4 +9,10 @@ enum Config : string
     case Count = 'cms/popup/count';
     case ClickableOverlay = 'cms/popup/clickableOverlay';
     case PopupType = 'cms/popup/type';
+
+    public function getFieldName(): string
+    {
+        $components = explode('/', $this->value);
+        return array_pop($components);
+    }
 }
