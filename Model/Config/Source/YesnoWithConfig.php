@@ -24,8 +24,7 @@ class YesnoWithConfig extends \Magento\Config\Model\Config\Source\Yesno
      */
     public function toArray()
     {
-        $array = parent::toArray();
-        $array['default'] = __('System Configuration');
-        return $array;
+        $array = ['default' =>  __('System Configuration')];
+        return array_merge($array, parent::toArray());
     }
 }
