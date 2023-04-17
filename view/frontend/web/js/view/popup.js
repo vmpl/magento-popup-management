@@ -3,8 +3,9 @@ define([
     'uiComponent',
     'Magento_Ui/js/modal/modal',
     'VMPL_PopupManagement/js/lib/storage',
+    'VMPL_PopupManagement/js/action/animateCss',
     'domReady!',
-], function ($, Component, modal, storage) {
+], function ($, Component, modal, storage, animateCss) {
     return Component.extend({
         defaults: {
             waitTime: 3000,
@@ -66,11 +67,23 @@ define([
             this.progressElement?.remove();
         },
         initDialog() {
+            const {animationIn, animationOut} = this.modalSettings.type !== 'slide'
+                ? {animationIn: 'fadeInDown', animationOut: 'fadeOutDown'}
+                : {animationIn: 'slideInRight', animationOut: 'slideOutRight'};
+
             this.popup = {
-                openModal: () => this.element.showModal(),
-                closeModal: () => this.element.close(),
+                openModal: () => {
+                    animateCss(this.element, animationIn);
+                    this.element.showModal()
+                },
+                closeModal: () => {
+                    animateCss(this.element, animationOut).then(() =>{
+                        this.element.close();
+                    })
+                },
             };
 
+            this.element.classList.add(`type-${this.modalSettings.type}`);
             this.element.open = false;
             this.element.addEventListener('close', this.onClose.bind(this));
             this.element.addEventListener('cancel', this.onClose.bind(this));

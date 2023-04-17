@@ -17,6 +17,15 @@
     box-sizing: border-box;
     max-height: @vmpl_dialog_max-height;
 
+    &.type-slide {
+      position: fixed;
+      margin: 0;
+      left: unset;
+      right: 0;
+      height: 100vh;
+      max-height: 100vh;
+    }
+
     form[method=dialog]:first-child {
       display: flex;
       flex-flow: row-reverse nowrap;
