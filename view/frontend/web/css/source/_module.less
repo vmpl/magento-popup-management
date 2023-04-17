@@ -1,11 +1,33 @@
 @vmpl_dialog_padding: @indent__m;
 @vmpl_dialog_margin: @indent__m auto;
 @vmpl_dialog_max-height: ~"calc(100% - @{indent__m} * 2)";
+@vmpl_popup_progress_timeout_height: @indent__xs;
+@vmpl_popup_progress_background: @theme__color__primary;
 
 & when (@media-common = true) {
-  .block-popup-cms:not(dialog) {
-    :not(.modal-content) > & {
-      display: none !important;
+  .block-popup-cms {
+    .progress-timeout {
+      width: 0;
+      margin-right: auto;
+      height: @vmpl_popup_progress_timeout_height;
+      background: @vmpl_popup_progress_background;
+      transition-property: all;
+      transition-delay: 0ms;
+      transition-timing-function: ease-out;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+
+      &.start {
+        width: 100%;
+      }
+    }
+
+    &:not(dialog) {
+      :not(.modal-content) > & {
+        display: none !important;
+      }
     }
   }
 
@@ -26,7 +48,7 @@
       max-height: 100vh;
     }
 
-    form[method=dialog]:first-child {
+    form[name=header] {
       display: flex;
       flex-flow: row-reverse nowrap;
       background-color: @page__background-color;

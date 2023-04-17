@@ -51,7 +51,7 @@ define([
                 this.progressElement = document.createElement('div');
                 this.progressElement.classList.add('progress-timeout');
                 this.progressElement.style.transitionDuration = `${this.closeTimeout}ms`;
-                this.element.parentElement.prepend(this.progressElement);
+                this.element.prepend(this.progressElement);
 
                 this.closeTimeoutHandler = setTimeout(() => {
                     this.popup.closeModal();
