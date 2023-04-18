@@ -42,17 +42,9 @@ class CmsPopup extends \Magento\Cms\Block\Widget\Block implements BlockInterface
     public function getWidgetParam(ConfigCase $config)
     {
         $value = $this->getData($config->getFieldName());
-
-        switch ($config) {
-            case ConfigCase::Count:
-            case ConfigCase::Delay:
-            case ConfigCase::Timeout:
-                return $this->hasData($config->getFieldName()) ? $value : $this->configProvider->getByType($config);
-            default:
-                return $value === 'default' || empty($value)
-                    ? $this->configProvider->getByType($config)
-                    : $value;
-        }
+        return !$this->hasData($config->getFieldName()) || $value === 'default'
+            ? $this->configProvider->getByType($config)
+            : $value;
     }
 
     public function getMageInit(): array
@@ -64,7 +56,7 @@ class CmsPopup extends \Magento\Cms\Block\Widget\Block implements BlockInterface
                 'limitOpened' => $this->getWidgetParam(ConfigCase::Count),
                 'modalSettings' => [
                     'type' => $this->getWidgetParam(ConfigCase::PopupType),
-                    'clickableOverlay' => $this->getWidgetParam(ConfigCase::ClickableOverlay)
+                    'clickableOverlay' => !!$this->getWidgetParam(ConfigCase::ClickableOverlay)
                 ],
             ]
         ];
