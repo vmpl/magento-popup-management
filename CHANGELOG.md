@@ -1,3 +1,6 @@
+# 0.4.1-alpha
+1. Issue with clickableOverlay is passed as string in the template
+
 # 0.4.0-alpha
 1. Recover progress style animation
 2. Adding animations for dialog popup
