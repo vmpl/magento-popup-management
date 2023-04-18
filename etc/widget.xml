@@ -22,6 +22,9 @@
           <option name="default" value="widget/popup_block/default.phtml" selected="true">
             <label translate="true">CMS Popup Block Default Template</label>
           </option>
+          <option name="dialog" value="widget/popup_block/dialog.phtml">
+            <label translate="true">HTML5 Dialog Element Template</label>
+          </option>
         </options>
       </parameter>
       <parameter name="delay" xsi:type="text" visible="true" required="false" sort_order="20">
