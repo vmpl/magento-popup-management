@@ -2,7 +2,7 @@
     "name": "vmpl/module-popup-managment",
     "description": "N/A",
     "type": "magento2-module",
-    "version": "0.3.2-alpha",
+    "version": "0.4.0-alpha",
     "license": "Apache-2.0",
     "authors": [
         {
@@ -13,7 +13,7 @@
         }
     ],
     "dist": {
-        "url": "https://github.com/vmpl/magento-popup-management/archive/refs/tags/0.3.2-alpha.zip",
+        "url": "https://github.com/vmpl/magento-popup-management/archive/refs/tags/0.4.0-alpha.zip",
         "type": "zip"
     },
     "source": {

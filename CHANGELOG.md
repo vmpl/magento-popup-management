@@ -1,3 +1,8 @@
+# 0.4.0-alpha
+1. Recover progress style animation
+2. Adding animations for dialog popup
+3. Adding new template with dialog element functionality
+
 # 0.3.2-alpha
 1. Wrong condition for limit open modals
 2. Force hide content of popup when it's not in modal wrapper
