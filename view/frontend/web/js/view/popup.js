@@ -74,7 +74,8 @@ define([
             this.popup = {
                 openModal: () => {
                     animateCss(this.element, animationIn);
-                    this.element.showModal()
+                    this.element.open || this.element.showModal()
+                    this.onOpened();
                 },
                 closeModal: () => {
                     animateCss(this.element, animationOut).then(() =>{
@@ -84,7 +85,6 @@ define([
             };
 
             this.element.classList.add(`type-${this.modalSettings.type}`);
-            this.element.open = false;
             this.element.addEventListener('close', this.onClose.bind(this));
             this.element.addEventListener('cancel', this.onClose.bind(this));
 
@@ -106,11 +106,6 @@ define([
                 };
                 document.addEventListener('click', overlayHandler, {passive: true});
             }
-
-            setTimeout(() => {
-                this.popup.openModal();
-                this.onOpened();
-            }, this.waitTime);
         },
         initModal() {
             const modalSettings = this.modalSettings;
