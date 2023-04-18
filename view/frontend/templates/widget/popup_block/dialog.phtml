@@ -1,0 +1,12 @@
+<?php /* @var $block \VMPL\PopupManagement\Block\Widget\CmsPopup */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<dialog id="<?= $escaper->escapeHtml($block->getGeneratedId()) ?>" class="widget block block-popup-cms"
+        data-mage-init='<?= /* @noEscape */ json_encode($block->getMageInit()) ?>'>
+    <form name="header" method="dialog">
+        <button class="action-close" data-role="closeBtn" type="button">
+            <span><?= $escaper->escapeHtml(__('Close')) ?></span>
+        </button>
+    </form>
+    <?= /* @noEscape */ $block->getText() ?>
+</dialog>
