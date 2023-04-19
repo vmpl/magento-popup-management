@@ -47,6 +47,21 @@
                  source_model="VMPL\PopupManagement\Model\Config\Source\PopupTypes\WithDefault">
         <label translate="true">Type</label>
       </parameter>
+      <parameter name="identifier_on_demand" xsi:type="text" visible="true" required="false" sort_order="70">
+        <label translate="true">Identifier on Demand</label>
+        <description translate="true">If filled in then popup could be trigger by # in URL.</description>
+      </parameter>
+      <parameter name="template_on_demand" xsi:type="select" visible="true" required="true" sort_order="10">
+        <label translate="true">Template used on demand</label>
+        <options>
+          <option name="default" value="VMPL_PopupManagement::widget/popup_block/default.phtml" selected="true">
+            <label translate="true">CMS Popup Block Default Template</label>
+          </option>
+          <option name="dialog" value="VMPL_PopupManagement::widget/popup_block/dialog.phtml">
+            <label translate="true">HTML5 Dialog Element Template</label>
+          </option>
+        </options>
+      </parameter>
     </parameters>
   </widget>
 </widgets>

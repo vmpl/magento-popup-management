@@ -11,12 +11,19 @@ class Trigger implements HttpGetActionInterface
     public function __construct(
         protected readonly RequestInterface $request,
         protected readonly ResultFactory $resultFactory,
-        protected readonly array $registeredHandles = [], // @todo use widget instance inorder to fetch it and display it
+        protected readonly \VMPL\PopupManagement\Api\PopupManagerInterface $popupManager,
     ) {
     }
 
     public function execute()
     {
-        // TODO: Implement execute() method.
+        $identifier = (string)$this->request->getParam('identifier');
+        $resultLayout = $this->resultFactory->create(ResultFactory::TYPE_LAYOUT);
+        $resultRaw = $this->resultFactory->create(ResultFactory::TYPE_RAW);
+        $layout = $resultLayout->getLayout();
+
+        $this->popupManager->appendPopupByIdentifier($identifier, $layout);
+        $resultRaw->setContents($layout->renderElement($identifier));
+        return $resultRaw;
     }
 }
