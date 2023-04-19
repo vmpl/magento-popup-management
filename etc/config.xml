@@ -9,6 +9,7 @@
         <count>1</count>
         <clickableOverlay>1</clickableOverlay>
         <type>popup</type>
+        <hashTriggerRegex>^\#vmpl\-trigger\_popup\-(.+)$</hashTriggerRegex>
       </popup>
     </cms>
   </default>
