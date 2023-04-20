@@ -1,3 +1,6 @@
+# 0.5.0-alpha
+1. Adding new feature to display popup on demand using # in URL
+
 # 0.4.1-alpha
 1. Issue with clickableOverlay is passed as string in the template
 
