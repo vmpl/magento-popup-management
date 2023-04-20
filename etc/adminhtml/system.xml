@@ -36,6 +36,9 @@
           <comment>Type of the window.</comment>
           <source_model>\VMPL\PopupManagement\Model\Config\Source\PopupTypes</source_model>
         </field>
+        <field id="hashTriggerRegex" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Regex for hash in the URL for trigger</label>
+        </field>
       </group>
     </section>
   </system>

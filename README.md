@@ -31,5 +31,4 @@ $ magento module:enable VMPL_PopupManagement
 ## Roadmap
 
 - [x] add new type of integration using native dialog functionality, [mdn reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
-- [ ] adding rules for displaying popup like, for specific customer
-- [ ] adding option to call the popup using JS for external systems like Google Tag Manager
+- [x] adding option to call the popup using JS for external systems like Google Tag Manager
