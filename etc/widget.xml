@@ -51,7 +51,7 @@
         <label translate="true">Identifier on Demand</label>
         <description translate="true">If filled in then popup could be trigger by # in URL.</description>
       </parameter>
-      <parameter name="template_on_demand" xsi:type="select" visible="true" required="true" sort_order="10">
+      <parameter name="template_on_demand" xsi:type="select" visible="true" required="false" sort_order="80">
         <label translate="true">Template used on demand</label>
         <options>
           <option name="default" value="VMPL_PopupManagement::widget/popup_block/default.phtml" selected="true">

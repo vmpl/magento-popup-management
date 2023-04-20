@@ -7,12 +7,15 @@ define([
 
     return function () {
         const matches = window.location.hash.match(HashTriggerRegex) ?? [];
-        const identifier = matches.shift();
+        const identifier = matches.pop();
         if (!identifier) {
             return;
         }
 
-        fetch(`/vmpl-popup/popup/trigger/identifier/${identifier}`)
+        const requestUrl = new URL(location.origin);
+        requestUrl.pathname = '/vmpl-popup/popup/trigger';
+        requestUrl.searchParams.append('identifier', identifier);
+        fetch(requestUrl.toString())
             .then(response => {
                 if (!response.ok) {
                     throw new Error(response.statusText);
@@ -25,7 +28,7 @@ define([
                 containerElement.classList.add('container');
                 containerElement.innerHTML = content;
 
-                Array.from(containerElement.children).forEach(child => {
+                Array.from(containerElement.content.children).forEach(child => {
                     document.body.append(child);
                     main.apply(child);
                 })

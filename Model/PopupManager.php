@@ -20,12 +20,13 @@ class PopupManager implements PopupManagerInterface
             return;
         }
 
-        $blockPopup = $layout->createBlock(
+        $block = $layout->createBlock(
             \VMPL\PopupManagement\Block\Widget\CmsPopup::class,
             $identifier,
             ['data' => $widgetInstance->getWidgetParameters()]
         );
-        $layout->addBlock($blockPopup);
+        $block->setTemplate(@$widgetInstance->getWidgetParameters()['template_on_demand']
+            ?? 'VMPL_PopupManagement::widget/popup/default.phtml');
     }
 
     public function getWidgetInstanceByIdentifier(string $identifier): ?WidgetInstance
@@ -35,7 +36,7 @@ class PopupManager implements PopupManagerInterface
         $select = $collection->getConnection()->select();
         $select->from(
             $collection->getResource()->getMainTable(),
-            ['instance_id', 'identifier' => new \Zend_Db_Exception("json_unquote(json_extract(widget_parameters, '$.identifier_on_demand'))")]
+            ['instance_id', 'identifier' => new \Zend_Db_Expr("json_unquote(json_extract(widget_parameters, '$.identifier_on_demand'))")]
         );
         $select->having('identifier = ?', $identifier);
         $instanceId = $collection->getConnection()->fetchOne($select);
