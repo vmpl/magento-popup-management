@@ -1,6 +1,8 @@
-# Adobe Commerce (Magento 2) Popup Management by VM.PL
+## Adobe Commerce (Magento 2) Popup Management by VM.PL
 
-> Create and mange popup using build in widget functionality and CMS blocks
+[![Latest Version](https://img.shields.io/github/v/tag/vmpl/magento-popup-management?sort=semver&label=version)](https://github.com/vmpl/magento-popup-management/)
+[![Development Branch](https://img.shields.io/badge/development_branch-develop-green.svg)](https://github.com/vmpl/magento-popup-management/tree/develop/)
+[![License](https://img.shields.io/badge/license-Apache2.0-blue.svg)](https://github.com/vmpl/magento-popup-management/blob/master/LICENSE)
 
 ### Features Stack
 
@@ -8,7 +10,9 @@
 2. Availability to use existing CMS blocks to display them as popup
 3. Create and add modal for chosen sites or places using Widgets
 4. Configuration settings can be set globally and per given instance
-5. Free to use 🔥
+5. Option to chose native for browser Dialog element to display content
+6. Use #vmpl-trigger_popup-{identifier} in URL to display given popup on demand
+7. Free to use 🔥
 
 ### Reference Links
 
@@ -16,19 +20,11 @@
 * [Group on Github](https://github.com/orgs/vmpl/teams/magento/)
 * [Demo Page](https://demo-magento.vm.pl/)
 
-## Installation guide
-
-1. Enable maintenance mode
-2. Add and enable module for composer
-3. Deploy Magento instance
-4. Disable maintenance and clear the cache
+## Quick Installation
 
 ```shell
 $ composer require vmpl/module-popup-managment
-$ magento module:enable VMPL_PopupManagement
 ```
-
-## Roadmap
-
-- [x] add new type of integration using native dialog functionality, [mdn reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
-- [x] adding option to call the popup using JS for external systems like Google Tag Manager
+```shell
+$ bin/magento module:enable VMPL_PopupManagement
+```
