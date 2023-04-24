@@ -4,6 +4,7 @@
     "type": "magento2-module",
     "version": "1.0.0-beta",
     "license": "Apache-2.0",
+    "homepage": "https://github.com/vmpl/magento-popup-management/",
     "authors": [
         {
             "name": "Kamil Wiśniowski",
