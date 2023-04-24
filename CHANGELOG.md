@@ -1,3 +1,6 @@
+# 1.0.0-beta
+1. Updated composer with readme
+
 # 0.5.0-alpha
 1. Adding new feature to display popup on demand using # in URL
 
